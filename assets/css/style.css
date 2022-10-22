@@ -1,41 +1,76 @@
 
+:root {
+    --outline:rgb(151, 6, 6);
+    --marg: 1em;
+    --links: crimson;
+    --page-header: crimson;
+}
 
+/*Sets font style, background color/image as a linear gradient, text color, and margin space for the body of the page.*/
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: rgb(28, 27, 27);
+    background-image: linear-gradient(rgb(29, 78, 152), rgb(84, 161, 43), rgb(202, 81, 48));
     color: rgb(4, 161, 33);
-    margin: auto 5px;
-
+    margin: var(--marg);
 }
 
-header, main, aside, .contact-me {
+/* Gives a responsive design, border style and color, and margin spacing to each area on the page. */
+header {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    background-color: rgb(11, 2, 57);
-    border: solid  rgb(151, 6, 6);
-    border-style:double;
-    margin: 10px 0 auto;
+    background-size: cover;
+    align-content: space-around;
+    align-items: center;
 }
-
-header h1, nav ul li a {
-    margin: auto 0;
-    text-decoration: none;
-    text-align: center;
-    color:crimson;
-    font-weight: 200;
-    font-style: oblique;
-    flex: 1 0 auto;
-    border: 10px solid;
-    border-color: crimson;
-    border-style: double;
-    background-color: black;
-}
-
 
 header nav {
-    flex: 1 1 200px;
+    flex: 1 1 auto;
 }
 
+main, aside, .contact-me {
+    display: flex;
+    background-color: rgb(11, 2, 57);
+    border: solid;
+    border-color: var(--outline);
+    border-style:double;
+    margin: var(--marg);
+}
+
+/* Gives text for each Header 3 on page a bolder font-weight and a glowing effect from the text-shadow.*/
+h3 {
+    font-weight: 550;
+    text-shadow: 0 0 10px rgb(4, 161, 33);
+}
+
+/* Gives page Header and Nav anchors a responsive design, border style, and border color. Gives text alignment, style, and color.*/
+header h1 {
+    margin: var(--marg);
+    color:var(--page-header);
+    background-color: black;
+    font-style: oblique;
+    text-align: center;
+    border: 10px solid;
+    border-color:var(--page-header);
+    border-style: double;
+    flex: 0 0 auto;
+    justify-content: center;
+}
+
+nav ul li a {
+    margin: var(--marg);
+    text-decoration: none;
+    text-align: center;
+    color: var(--links);
+    flex: 1 0 auto;
+    border: 10px solid;
+    border-color: var(--links);
+    border-style: double;
+    background-color: black;
+    justify-content: center;
+}
+
+/* Allows nav menus at the top and bottom of the page to flex and creates skew for borders for each line item.*/
 nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -47,40 +82,97 @@ nav ul li {
     flex: 1 0 auto;
 }
 
+/* Allows the content in the About Me section to flex responsively and aligns content.*/
 .about-me {
     display: flex;
     flex-wrap: wrap;
 }
 
-.about-me div {
+.am-content {
     display: flex;
     flex-wrap: wrap;
-    flex: 1 0 100px;
+    flex: 1 0 200px;
     justify-content: space-evenly;
     align-content: center;
     align-items: center;
 }
 
+/* Gives the About Me image a set scale size and a rounded, double-lined, and colored border.*/
 .about-me img { 
     width: 200px;
     height: 200px;
     border-radius: 1000%;
-    border: solid rgb(151, 6, 6);
-    margin: 20px;
+    border: solid;
+    border-color: var(--outline);
+    border-style: double;
+    margin: var(--marg);
     flex: 0 0 auto;
 }
 
+/* Creates a margin space for the About Me paragraph.*/
 .about-me p {
-    margin: 10px;
+    margin: var(--marg);
 }
 
-.project-1, .project-2, .project-3 {
-    flex: 1 0 auto;
-    justify-content: center;
+/* Allows the content in the My Projects section to flex responsively and aligns content. */
+aside, .my-projects, .project-1, .temp-holder {
+    display: flex;
+    flex-wrap: wrap;
+    margin: var(--marg); 
+} 
+
+aside {
+flex-direction: column;
+align-items: center;
 }
 
+.my-projects {
+  flex: 0 auto;
+  justify-content: center;
+}
+
+.project-1  {
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 1000px;  
+}
+
+.temp-holder {
+    flex-direction: column;
+    align-items: center;
+    flex: 0 auto;
+}
+
+/*Scales the image for project-1.*/
 .project-1 img {
     height: auto;
     width: 350px;
 }
 
+/* Allows the content in the Contact Me section to flex responsively and aligns content. */
+.contact-me {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    margin: var(--marg);
+}
+/* Allows the links in the Contact Me section to flex responsively and aligns content. */
+.contact-me p {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--marg);
+}
+
+/* Creates highlight when hovering over each project image.*/
+.project-1 img:hover, .temp-holder img:hover {
+    opacity: .5;
+    background-color: yellow;
+}
+
+/* Changes text color when hovering over each Nav link within page*/
+nav ul li a:hover {
+    color: white;
+}
