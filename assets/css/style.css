@@ -20,7 +20,7 @@ header {
     flex-direction: column;
     flex-wrap: wrap;
     background-size: cover;
-    align-content: space-around;
+    align-content: center;
     align-items: center;
 }
 
@@ -124,6 +124,7 @@ aside, .my-projects, .project-1, .temp-holder {
 aside {
 flex-direction: column;
 align-items: center;
+align-content: center;
 }
 
 .my-projects {
@@ -134,13 +135,13 @@ align-items: center;
 .project-1  {
     flex-direction: column;
     align-items: center;
-    flex: 1 0 1000px;  
+    flex: 1 0 100%;  
 }
 
 .temp-holder {
     flex-direction: column;
     align-items: center;
-    flex: 0 auto;
+    flex: 0 0 40%;
 }
 
 /*Scales the image for project-1.*/
@@ -164,6 +165,7 @@ align-items: center;
     flex-direction: column;
     align-items: center;
     margin: var(--marg);
+    flex: 1 0 auto;
 }
 
 /* Creates highlight when hovering over each project image.*/
@@ -172,7 +174,28 @@ align-items: center;
     background-color: yellow;
 }
 
+
 /* Changes text color when hovering over each Nav link within page*/
 nav ul li a:hover {
     color: white;
+}
+
+/*Changes page responsiveness for content within different media device screen views.*/
+@media screen and (max-width: 600px) {
+   nav {
+    display: flex;
+   }
+
+   nav ul {
+    flex-direction: column;
+    flex: 0 1 100%;
+   }
+
+    header {
+    align-content: space-around;
+   }
+
+    .project-1 img {
+        width: 275px;
+    }
 }
