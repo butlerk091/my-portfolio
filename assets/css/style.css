@@ -52,7 +52,7 @@ nav ul li {
 /* Gives text for each Header 3 on page a bolder font-weight and a glowing effect from the text-shadow.*/
 h3 {
     font-weight: 550;
-    text-shadow: .2em .2em 15px rgb(4, 161, 33);
+    text-shadow: -.2em -.2em 15px rgb(4, 161, 33)
 }
 
 /* Gives each Header 4 a thinner font-weight on page.*/
