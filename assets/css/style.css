@@ -37,39 +37,6 @@ main, aside, .contact-me {
     margin: var(--marg);
 }
 
-/* Gives text for each Header 3 on page a bolder font-weight and a glowing effect from the text-shadow.*/
-h3 {
-    font-weight: 550;
-    text-shadow: 0 0 10px rgb(4, 161, 33);
-}
-
-/* Gives page Header and Nav anchors a responsive design, border style, and border color. Gives text alignment, style, and color.*/
-header h1 {
-    margin: var(--marg);
-    color:var(--page-header);
-    background-color: black;
-    font-style: oblique;
-    text-align: center;
-    border: 10px solid;
-    border-color:var(--page-header);
-    border-style: double;
-    flex: 0 0 auto;
-    justify-content: center;
-}
-
-nav ul li a {
-    margin: var(--marg);
-    text-decoration: none;
-    text-align: center;
-    color: var(--links);
-    flex: 1 0 auto;
-    border: 10px solid;
-    border-color: var(--links);
-    border-style: double;
-    background-color: black;
-    justify-content: center;
-}
-
 /* Allows nav menus at the top and bottom of the page to flex and creates skew for borders for each line item.*/
 nav ul {
     display: flex;
@@ -80,6 +47,41 @@ nav ul li {
     list-style-type: none;
     transform: skew(5deg);
     flex: 1 0 auto;
+}
+
+/* Gives text for each Header 3 on page a bolder font-weight and a glowing effect from the text-shadow.*/
+h3 {
+    font-weight: 550;
+    text-shadow: .2em .2em 15px rgb(4, 161, 33);
+}
+
+/* Gives each Header 4 a thinner font-weight on page.*/
+h4{
+    font-weight: 325;
+}
+
+/* Gives page Header and Nav anchors a responsive design, border style, and border color. Gives text alignment, style, and color.*/
+header h1, nav ul li a {
+    margin: var(--marg);
+    padding: .15em;
+    background-color: black;
+    text-align: center;
+    border: 10px solid;
+    border-style: double;
+}
+
+header h1 {
+    color:var(--page-header);
+    font-style: oblique;
+    border-color:var(--page-header);
+    flex: 0 0 auto;
+    justify-content: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--links);
+    border-color: var(--links);
 }
 
 /* Allows the content in the About Me section to flex responsively and aligns content.*/
